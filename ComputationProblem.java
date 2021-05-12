@@ -6,17 +6,20 @@ public class ComputationProblem
 	public static final int IS_FULL_TIME = 2;
 	public static final int EMP_RATE_PER_HOUR = 20;
 	public static final int COUNT_OF_WORK_DAYS = 2;
+	public static final int MAX_HRS_OR_DAYS_IN_MONTH = 10;
 	
 	public static void main(String[] args)
 	{		
 	System.out.println("Welcome to Employee Wage Computation Program");
 
 	int empHrs = 0;
-	int empWage = 0;
-	int totalEmpWage = 0;
+	int totalEmpHrs = 0;
+	int totalWorkingDays = 0;
 	
-	for (int day = 0; day < COUNT_OF_WORK_DAYS;day++)
+	while (totalEmpHrs <= MAX_HRS_OR_DAYS_IN_MONTH && 
+			totalWorkingDays < COUNT_OF_WORK_DAYS)
 	{
+		totalWorkingDays++;
 		int empCheck = (int)Math.floor(Math.random() * 10) % 3;
 		switch (empCheck) 
 		{
@@ -32,10 +35,12 @@ public class ComputationProblem
 			default:
 				empHrs = 0;
 		}
-	empWage = empHrs * 	EMP_RATE_PER_HOUR;
-	totalEmpWage += empWage;	
-	System.out.println("Employee wage:" + empWage);
+		totalEmpHrs += empHrs;
+		System.out.println("Day#:" + totalWorkingDays + "Employee Hrs:" + empHrs);
+	}
+		int totalEmpWage = totalEmpHrs * 	EMP_RATE_PER_HOUR;
+	System.out.println("Total Employee wage:" + totalEmpWage);
 		
 	}
-	}
+	
 }
