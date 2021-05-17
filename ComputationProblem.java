@@ -5,7 +5,6 @@ public class ComputationProblem
 public static void main(String[] args) 
 {
 	System.out.println("Welcome to Employee Wage Computation Program");
-	
 	int x = 1;
 	double empCheck = Math.floor(Math.random() * 10) % 2;
 	if ( empCheck == x )
