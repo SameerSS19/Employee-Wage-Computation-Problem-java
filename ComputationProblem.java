@@ -2,17 +2,13 @@ package com.empwagecomputaionprogram;
 import java.util.Scanner;
 public class ComputationProblem
 {
-	private static final int HalfWorkHour = 0;
-	private static final int FullWorkHour = 0;
 	public String CompanyName;
 	public int MaxHours;
 	public int WagePerHour;
 	public int FullWorkingHour;
 	public int HalfWorkingHour;
 	public int TotalWorkingDays=0;
-	private int FullWoringkHour;
-	private int TotalWoringkDays;
-	public ComputationProblemOpps()
+public ComputationProblem()
 	{
 		this.CompanyName="";
 		this.MaxHours= 0;
@@ -36,7 +32,7 @@ public int Attendance(int MaxHours , int TotalWorkingDays,int FullWorkingHour,in
 			break;
 			case 2: 
 				workingHours=workingHours+HalfWorkingHour;
-				break;
+			break;
 			case 3: 
 				workingHours = workingHours+0;
 			}
@@ -58,7 +54,7 @@ public static void main(String[] args) {
 	emp.CompanyName=scan.nextLine();
 	scan.nextLine();	
 	System.out.println("Enter the Full Working hour :");
-	emp.FullWoringkHour=scan.nextInt();
+	emp.FullWorkingHour=scan.nextInt();
 	System.out.println("Enter the half Working hour :");
 	emp.HalfWorkingHour=scan.nextInt();
 	System.out.println("Enter the Maximum working hour :");
@@ -66,8 +62,7 @@ public static void main(String[] args) {
 	System.out.println("Enter the Wage per hour :");
 	emp.WagePerHour=scan.nextInt();
 	System.out.println("Enter the total working days :");
-	emp.TotalWoringkDays=scan.nextInt();	
-	
+	emp.TotalWorkingDays=scan.nextInt();	
 	int totalworkinghours=emp.Attendance(emp.MaxHours,emp.TotalWorkingDays,emp.FullWorkingHour,emp.HalfWorkingHour);
 	emp.CalculateWages(emp.WagePerHour,totalworkinghours);
 	}
