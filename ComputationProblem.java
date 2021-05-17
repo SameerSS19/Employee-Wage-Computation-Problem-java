@@ -1,6 +1,6 @@
 package com.empwagecomputaionprogram;
 import java.util.Scanner;
-public class ComputationProblemOpps 
+public class ComputationProblem
 {
 	private static final int HalfWorkHour = 0;
 	private static final int FullWorkHour = 0;
@@ -12,8 +12,6 @@ public class ComputationProblemOpps
 	public int TotalWorkingDays=0;
 	private int FullWoringkHour;
 	private int TotalWoringkDays;
-	
-	
 	public ComputationProblemOpps()
 	{
 		this.CompanyName="";
@@ -30,7 +28,6 @@ public int Attendance(int MaxHours , int TotalWorkingDays,int FullWorkingHour,in
 		while(workingHours <= MaxHours && workingDays <= TotalWorkingDays)
 		{
 			workingDays++ ;
-			
 			int attendance = (int) Math.floor(Math.random() * 10) % 3; 
 			switch (attendance)
 			{
@@ -46,9 +43,7 @@ public int Attendance(int MaxHours , int TotalWorkingDays,int FullWorkingHour,in
 			System.out.println("Total Working hours :");
 			System.out.println (workingHours);
 		}
-		
 		return workingHours;
-	
 }
 public void CalculateWages (int WagePerHour, int workingHours) 
 {
@@ -56,14 +51,12 @@ public void CalculateWages (int WagePerHour, int workingHours)
 	System.out.println("Total Wages of the employee :");
 	System.out.println (totalSalary);
 }
-
 public static void main(String[] args) {
-	ComputationProblemOpps emp = new ComputationProblemOpps();
+	ComputationProblem emp = new ComputationProblem();
 	Scanner scan = new Scanner(System.in);
 	System.out.println("Enter the company Name :");
 	emp.CompanyName=scan.nextLine();
-	scan.nextLine();
-	
+	scan.nextLine();	
 	System.out.println("Enter the Full Working hour :");
 	emp.FullWoringkHour=scan.nextInt();
 	System.out.println("Enter the half Working hour :");
@@ -73,9 +66,9 @@ public static void main(String[] args) {
 	System.out.println("Enter the Wage per hour :");
 	emp.WagePerHour=scan.nextInt();
 	System.out.println("Enter the total working days :");
-	emp.TotalWoringkDays=scan.nextInt();
+	emp.TotalWoringkDays=scan.nextInt();	
 	
 	int totalworkinghours=emp.Attendance(emp.MaxHours,emp.TotalWorkingDays,emp.FullWorkingHour,emp.HalfWorkingHour);
 	emp.CalculateWages(emp.WagePerHour,totalworkinghours);
-}
+	}
 }
